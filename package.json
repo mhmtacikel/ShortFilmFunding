@@ -22,7 +22,8 @@
     "build": "react-scripts build"
   },
   "devDependencies": {
-    "assemblyscript": "^0.20.4"
+    "assemblyscript": "^0.20.4",
+    "near-sdk-as": "^3.2.3"
   },
   "dependencies": {
     "near-api-js": "^0.44.2",
