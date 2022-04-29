@@ -4,16 +4,16 @@ export function create(name: string, directorName: string, wallet: string): Shor
   return ShortFilm.insert(name,directorName,wallet);  
 }
 
-export function get(id: u32): ShortFilm {
+export function find(id: u32): ShortFilm {
   return ShortFilm.findShortFilmById(id);
 }
 
 
-export function del(id: u32): void {
+export function remove(id: u32): void {
   ShortFilm.deleteById(id);
 }
 
-export function getAll(offset: u32, limit:u32 = shortFilms.length): ShortFilm[]{
+export function findAll(offset: u32, limit:u32 = shortFilms.length): ShortFilm[]{
   return ShortFilm.findAll(offset, limit);
 }
 

@@ -43,6 +43,7 @@ export class ShortFilm {
     }
 
     static fundShortFilmById(accountId:string, id:u32): String {
+        assert(shortFilms.contains(id), 'Short Film does not exist');
         const shortFilm = this.findShortFilmById(id);
         const fund_Sender = context.sender;
         const amount = context.attachedDeposit;
@@ -64,6 +65,7 @@ export class ShortFilm {
 
     
     static sentFundById(wallet: string, id:u32): string {
+        assert(context.attachedDeposit == u128.fromString('10000000000000000000000000'), 'A minimum of 10 NEAR is required to send the funding to the short film.');
 
         const shortFilm = this.findShortFilmById(id);       
         const funding = ContractPromiseBatch.create(wallet);
@@ -71,7 +73,6 @@ export class ShortFilm {
         funding.transfer(amount_receive);
         shortFilms.set(shortFilm.id, shortFilm);
        
-        return `Sent total fund ${(amount_receive).toString()} NEAR to ${wallet}`;
-        
+        return `Sent total fund ${(amount_receive).toString()} NEAR to ${wallet}`;       
     }
 }
