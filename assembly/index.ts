@@ -10,7 +10,7 @@ export function find(id: u32): ShortFilm {
 
 
 export function remove(id: u32): void {
-  ShortFilm.deleteById(id);
+  return ShortFilm.deleteById(id);
 }
 
 export function findAll(offset: u32, limit:u32 = shortFilms.length): ShortFilm[]{
@@ -18,7 +18,7 @@ export function findAll(offset: u32, limit:u32 = shortFilms.length): ShortFilm[]
 }
 
 export function fundShortFilm(accountId: string, id:u32): String {
-   return ShortFilm.fundShortFilmById(accountId, id);
+  return ShortFilm.fundShortFilmById(accountId, id);
 }
 
 export function sentFund(wallet: string, id:u32): String {
