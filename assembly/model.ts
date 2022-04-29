@@ -17,7 +17,7 @@ export class ShortFilm {
         this.id = math.hash32<string>(name);
         this.name = name;
         this.directorName = directorName; 
-        this.wallet = ""; 
+        this.wallet = wallet; 
         this.totalFund = context.attachedDeposit;        
     }
 

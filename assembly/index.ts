@@ -13,7 +13,7 @@ export function remove(id: u32): void {
   return ShortFilm.deleteById(id);
 }
 
-export function findAll(offset: u32, limit:u32 = shortFilms.length): ShortFilm[]{
+export function findAll(offset: u32, limit:u32 = 10): ShortFilm[]{
   return ShortFilm.findAll(offset, limit);
 }
 
