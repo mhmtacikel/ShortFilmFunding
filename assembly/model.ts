@@ -57,6 +57,8 @@ export class ShortFilm {
 
         funding.transfer(amount);
 
+        shortFilm.totalFund = u128.add(shortFilm.totalFund, amount);
+
         if(amount > balance){
             return `${fund_Sender}does not have enough ${balance}`
         }
