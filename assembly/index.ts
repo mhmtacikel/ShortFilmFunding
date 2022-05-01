@@ -21,6 +21,6 @@ export function fundShortFilm(accountId: string, id:u32): String {
   return ShortFilm.fundShortFilmById(accountId, id);
 }
 
-export function sentFund(wallet: string, id:u32): String {
-  return ShortFilm.sentFundById(wallet, id);
+export function sentFund(id:u32): String {
+  return ShortFilm.sentFundById(id);
 }

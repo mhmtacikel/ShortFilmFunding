@@ -1,0 +1,10 @@
+near call $CONTRACT create '{"name":"Mass for the Dakota Sioux", "directorName":"Bruce Baillie","wallet":"filmfunding.test"}' --accountId filmfunding.testnet
+near call $CONTRACT create '{"name":"The Last of the Mohicans", "directorName":"John Ford","wallet":"filmfunding.test"}' --accountId filmfunding.testnet
+-----------------------------------------------------------------------------------------------------------------------------
+near view $CONTRACT find '{"id": <SHORTFILMID>}' --accountId filmfunding.testnet // BURAYI DÜZENLE
+near view $CONTRACT remove '{"id": <SHORTFILMID>}' --accountId filmfunding.testnet
+near view $CONTRACT findAll '{"offset":0}' --accountId filmfunding.testnet 
+--------------------------------------------------------------------------------------------------------------
+near call $CONTRACT fundShortFilm '{"accountId": "<CONTRACTADRESS>", "id": <SHORTFILMID>}' --accountId filmfunding.testnet --amount
+near call $CONTRACT sentFund '{"wallet": "directorwallet", "id": <SHORTFILMID>}' --accountId filmfunding.testnet --amount
+

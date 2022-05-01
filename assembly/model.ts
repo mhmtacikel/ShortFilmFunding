@@ -1,3 +1,4 @@
+
 import{PersistentUnorderedMap,context, logging, math, storage, u128, ContractPromiseBatch} from "near-sdk-as";
 
 export const shortFilms = new PersistentUnorderedMap<u32, ShortFilm>("m");
@@ -42,22 +43,19 @@ export class ShortFilm {
         shortFilms.delete(id);
     }
 
-    static fundShortFilmById(accountId:string, id:u32): String {
+    static fundShortFilmById(id:u32): String {
         assert(shortFilms.contains(id), 'Short Film does not exist');
-        const shortFilm = this.findShortFilmById(id);
+        const shortFilm = this.findShortFilmById(id);        
         const fund_Sender = context.sender;
         const amount = context.attachedDeposit;
 
         logging.log("Sender: " + fund_Sender);
         logging.log(`Congratulations: ${shortFilm.name} has been funded by ${fund_Sender} with ${(amount).toString()} NEAR`);
+      
+        const balance = context.accountBalance;     
 
-        const funding = ContractPromiseBatch.create(accountId);
-        
-        const balance = context.accountBalance;
-
-        funding.transfer(amount);
-
-        shortFilm.totalFund = u128.add(shortFilm.totalFund, amount);
+        shortFilm.totalFund = u128.add(shortFilm.totalFund, amount);        
+        shortFilms.set(shortFilm.id, shortFilm);
 
         if(amount > balance){
             return `${fund_Sender}does not have enough ${balance}`
@@ -66,10 +64,11 @@ export class ShortFilm {
     }
 
     
-    static sentFundById(wallet: string, id:u32): string {
+    static sentFundById(id:u32): string {
         assert(context.attachedDeposit == u128.fromString('10000000000000000000000000'), 'A minimum of 10 NEAR is required to send the funding to the short film.');
 
-        const shortFilm = this.findShortFilmById(id);       
+        const shortFilm = this.findShortFilmById(id);
+        const wallet=shortFilm.wallet;       
         const funding = ContractPromiseBatch.create(wallet);
         const amount_receive = shortFilm.totalFund;
         funding.transfer(amount_receive);
