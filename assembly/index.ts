@@ -1,4 +1,4 @@
-import { ShortFilm } from "./model";
+import { ShortFilm,shortFilms } from "./model";
 
 
 export function create(name: string, directorName: string, wallet: string): ShortFilm {
@@ -13,7 +13,7 @@ export function remove(id: u32): void {
   ShortFilm.deleteById(id);
 }
 
-export function findAll(offset: u32, limit:u32 = 10): ShortFilm[]{
+export function findAll(offset: u32, limit:u32 = shortFilms.length): ShortFilm[]{
   return ShortFilm.findAll(offset, limit);
 }
 

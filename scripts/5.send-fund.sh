@@ -6,7 +6,7 @@ set -e
 
 echo
 echo 'About to call sendFund() on the contract'
-echo 'This is the function used to send the funds in the contract to the short film director.'
+echo 'This is the function used to send the funds in the contract to the short film DIRECTOR.'
 echo 
 echo near call \$CONTRACT sendFund '{"id": '\$FILMID'}' --accountId \$DIRECTOR 
 echo

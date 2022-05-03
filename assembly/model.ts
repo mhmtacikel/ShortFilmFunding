@@ -77,4 +77,11 @@ export class ShortFilm {
        
         return `Sent total fund ${(amount_receive).toString()} Yocto N to ${wallet}`;
     }
+
+     static seedShortFilms(): void {
+        ShortFilm.insert("The Red Balloon", "Albert Lamorisse", "filmdirector.testnet");
+        ShortFilm.insert("The Phone Call", "Mat Kirkby", "filmdirector.testnet");
+        ShortFilm.insert("The Music Box", "James Parrot", "filmdirector.testnet");
+        ShortFilm.insert("Bottle Rocket", "Director Wes Anderson", "filmdirector.testnet");
+     }
 }
