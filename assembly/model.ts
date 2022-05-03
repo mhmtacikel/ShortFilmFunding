@@ -41,6 +41,7 @@ export class ShortFilm {
     
     static deleteById(id:u32): void {
         shortFilms.delete(id);
+        `${id} has been deleted`;
     }
 
     static fundShortFilmById(id:u32): String {
@@ -60,21 +61,20 @@ export class ShortFilm {
         if(amount > balance){
             return `${fund_Sender}does not have enough ${balance}`
         }
-        return `${fund_Sender} has found the ${shortFilm.name} successfully`;
+        return `Congratulations: ${shortFilm.name} has been funded by ${fund_Sender} with ${(amount).toString()} NEAR`;
     }
 
     
-    static sentFundById(id:u32): string {
-        if(!shortFilms.contains(id)){
-            return `Short Film does not exist`;
-        }
+    static sendFundById(id:u32): string {
         const shortFilm = this.findShortFilmById(id);
         const wallet=shortFilm.wallet;
         const funding = ContractPromiseBatch.create(wallet);
         const amount_receive = shortFilm.totalFund;
+        // assert(amount_receive < u128.fromString('10000000000000000000000000'), 'Amount is not enough'); 
+        // Maybe later we can add a check for the amount of the short film to be greater than the amount of the funding
         funding.transfer(amount_receive);
         shortFilms.set(shortFilm.id, shortFilm);
        
-        return `Sent total fund ${(amount_receive).toString()} NEAR to ${wallet}`;       
+        return `Sent total fund ${(amount_receive).toString()} Yocto N to ${wallet}`;
     }
 }

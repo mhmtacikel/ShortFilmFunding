@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+set -e
+
+[ -z "$CONTRACT" ] && echo "Missing \$CONTRACT environment variable" && exit 1
+[ -z "$DIRECTOR" ] && echo "Missing \$DIRECTOR environment variable" && exit 1
+
+echo
+echo 'About to call remove() on the contract'
+echo 
+echo near call \$CONTRACT remove '{"id": '\$FILMID'}' --accountId \$DIRECTOR
+echo
+echo \$CONTRACT is $CONTRACT
+echo \$DIRECTOR is $DIRECTOR
+echo \$FILMID is $FILMID
+echo 
+echo 'Are you sure you want to remove this film? (y/n)'
+read -r answer
+if [ "$answer" != "${answer#[Yy]}" ] ;then
+    near call $CONTRACT remove '{"id": '$FILMID'}' --accountId $DIRECTOR
+fi
+echo
+echo
+
