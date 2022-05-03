@@ -1,6 +1,10 @@
 import { ShortFilm,shortFilms } from "./model";
 
 
+export function seedShortFilms(): void {
+  ShortFilm.seedShortFilms();
+}
+
 export function create(name: string, directorName: string, wallet: string): ShortFilm {
   return ShortFilm.insert(name,directorName,wallet);  
 }
@@ -24,4 +28,10 @@ export function fundShortFilm(id:u32): String {
 export function sendFund(id:u32): String {
   return ShortFilm.sendFundById(id);
 }
+
+
+
+
+
+
 

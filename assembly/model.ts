@@ -51,7 +51,7 @@ export class ShortFilm {
         const amount = context.attachedDeposit;
 
         logging.log("Sender: " + fund_Sender);
-        logging.log(`Congratulations: ${shortFilm.name} has been funded by ${fund_Sender} with ${(amount).toString()} NEAR`);
+        logging.log(`Congratulations: ${shortFilm.name} has been funded by ${fund_Sender} with ${(amount).toString()} Yocto N`);
       
         const balance = context.accountBalance;     
 
@@ -61,7 +61,7 @@ export class ShortFilm {
         if(amount > balance){
             return `${fund_Sender}does not have enough ${balance}`
         }
-        return `Congratulations: ${shortFilm.name} has been funded by ${fund_Sender} with ${(amount).toString()} NEAR`;
+        return `Congratulations: ${shortFilm.name} has been funded by ${fund_Sender} with ${(amount).toString()} Yocto N`;
     }
 
     
@@ -73,8 +73,8 @@ export class ShortFilm {
         // assert(amount_receive < u128.fromString('10000000000000000000000000'), 'Amount is not enough'); 
         // Maybe later we can add a check for the amount of the short film to be greater than the amount of the funding
         funding.transfer(amount_receive);
+        shortFilm.totalFund = u128.fromString('0');
         shortFilms.set(shortFilm.id, shortFilm);
-       
         return `Sent total fund ${(amount_receive).toString()} Yocto N to ${wallet}`;
     }
 

@@ -9,9 +9,9 @@ echo \$CONTRACT is [ $CONTRACT ]
 echo
 echo
 
-echo near view \$CONTRACT findALL '{"offset":0}'
+echo near view \$CONTRACT findAll '{"offset":0}'
 echo 
 
-near view $CONTRACT findALL '{"offset":0}'
+near view $CONTRACT findAll '{"offset":0}'
 echo
 echo

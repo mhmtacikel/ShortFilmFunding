@@ -14,6 +14,9 @@ echo \$DIRECTOR is $DIRECTOR
 echo \$1 is [ $1 ] '(ShortFilm name)'
 echo \$2 is [ $2 ] '(Director name)'
 echo 
+echo 'Seeding the contract with some Short Films'
+echo
+near call $CONTRACT seedShortFilms --accountId $DIRECTOR
 echo
 near call $CONTRACT create '{"name":"'"$1"'", "directorName":"'"$2"'","wallet":"'$DIRECTOR'" }' --accountId $DIRECTOR
 
