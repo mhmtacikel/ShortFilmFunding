@@ -13,12 +13,12 @@ Your contract is now ready to use.
 
 # To use the contract you can do any of the following:
 ----------------------------------------------------------------------------------------------
-Run ./scripts/2.create-shortfilm.sh to create the short film by the director who wants people to fund
-Run ./scripts/3.remove-shortfilm.sh to delete the short film by the director 
-Run ./scripts/4.fund-shortfilm.sh to fund the short film by the funder
-Run ./scripts/5.send-fund.sh for transferring the accumulated funds to the wallet of the director
-Run ./scripts/5.send-fund.sh to transfer the funds accumulated in the contract to the manager's wallet
-Run ./scripts/6.find-shortfilm.sh to find the short film 
-Run ./scripts/7.list-shortfilms.sh to list the short films
+- Run ./scripts/2.create-shortfilm.sh to create the short film by the director who wants people to fund
+- Run ./scripts/3.remove-shortfilm.sh to delete the short film by the director 
+- Run ./scripts/4.fund-shortfilm.sh to fund the short film by the funder
+- Run ./scripts/5.send-fund.sh for transferring the accumulated funds to the wallet of the director
+- Run ./scripts/5.send-fund.sh to transfer the funds accumulated in the contract to the manager's wallet
+- Run ./scripts/6.find-shortfilm.sh to find the short film 
+- Run ./scripts/7.list-shortfilms.sh to list the short films
 
 
