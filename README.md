@@ -2,6 +2,8 @@
 
 This project emerged with the understanding that social development is possible by revealing the potential of individuals and sharing inspiring stories with the society. With this project, which can also be seen as a social responsibility, it is aimed to reveal the importance of short films and to fund them.
 
+https://www.loom.com/share/4ff317d682124c199721b89a444b6a3f
+
 # Usage	
 
 To deploy the contract for development, follow these steps:
