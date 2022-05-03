@@ -17,7 +17,6 @@ Your contract is now ready to use.
 - Run ./scripts/3.remove-shortfilm.sh to delete the short film by the director 
 - Run ./scripts/4.fund-shortfilm.sh to fund the short film by the funder
 - Run ./scripts/5.send-fund.sh for transferring the accumulated funds to the wallet of the director
-- Run ./scripts/5.send-fund.sh to transfer the funds accumulated in the contract to the manager's wallet
 - Run ./scripts/6.find-shortfilm.sh to find the short film 
 - Run ./scripts/7.list-shortfilms.sh to list the short films
 
