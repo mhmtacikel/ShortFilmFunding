@@ -1,6 +1,6 @@
 # Short Film Funding Project
 
-This project emerged with the understanding that social development is possible by revealing the potential of individuals and sharing inspiring stories with the society. With this project, which can also be seen as a social responsibility, it is aimed to reveal the importance of short films.
+This project emerged with the understanding that social development is possible by revealing the potential of individuals and sharing inspiring stories with the society. With this project, which can also be seen as a social responsibility, it is aimed to reveal the importance of short films and to fund them.
 
 # Usage	
 
